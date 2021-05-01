@@ -1,0 +1,11 @@
+output   = "app/db/generated"
+wipe     = true
+
+[psql]
+  dbname = "sample"
+  host   = "database"
+  port   = 5432
+  user   = "user"
+  pass   = "password"
+  sslmode= "disable"
+  blacklist= ["schema_migrations"]

@@ -8,17 +8,18 @@ option go_package = "github.com/Urotea/go-grpc-sample/api";
 package api;
 
 // The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
+service UserManagement {
+  rpc AddUser (AddUserRequest) returns (AddUserReply) {}
 }
 
 // The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
+message AddUserRequest {
+  string id = 1;
+  string firstName = 2;
+  string lastName = 3;
 }
 
 // The response message containing the greetings
-message HelloReply {
+message AddUserReply {
   string message = 1;
 }

@@ -14,14 +14,15 @@
 	
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"golang.Go"
+		"golang.Go",
+		"ckolkman.vscode-postgres"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [9000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash ./generate_proto.sh",
+	"postCreateCommand": "go generate",
 
 	// Use 'portsAttributes' to set default properties for specific forwarded ports.
 	"portsAttributes": {

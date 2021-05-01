@@ -10,11 +10,15 @@ services:
       - ../:/workspace/go-grpc-sample
     environment:
       PORT: 9000
-      DB_SCHEMA: postgres://root:password@postgres:5432/sample?sslmode=disable
-  postgres:
+      DB_USER: "user"
+      DB_PASSWORD: "password"
+      DB_HOST: "database"
+      DB_NAME: "sample"
+      DB_PORT: "5432"
+  database:
     image: postgres:13
     environment:
-      POSTGRES_USER: root
+      POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
       POSTGRES_DB: sample
